@@ -1,0 +1,19 @@
+:root{
+  /* 8px base */
+  --space-xxs:2px;
+  --space-xs:4px;
+  --space-sm:8px;
+  --space-md:12px;
+  --space-lg:18px;
+  --space-xl:24px;
+  --space-xxl:30px;
+  --space-section:48px;
+
+  --grid-gutter:var(--space-sm);
+  --card-padding:0px;          /* product cards are never padded */
+  --row-padding-y:var(--space-xl);
+
+  --section-rhythm:48px;
+  --section-rhythm-tablet:32px;
+  --section-rhythm-mobile:24px;
+}

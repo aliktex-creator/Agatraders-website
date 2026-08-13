@@ -1,0 +1,15 @@
+:root{
+  --container-max:1440px;
+  --container-gutter:24px;
+  --container-gutter-wide:80px;
+  --filter-rail-width:220px;
+
+  --bp-mobile:599px;
+  --bp-mobile-landscape:639px;
+  --bp-tablet-narrow:960px;
+  --bp-tablet:1023px;
+  --bp-desktop-small:1024px;
+  --bp-desktop:1200px;
+  --bp-desktop-large:1440px;
+  --bp-ultrawide:1920px;
+}

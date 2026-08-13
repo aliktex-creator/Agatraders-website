@@ -1,0 +1,18 @@
+:root{
+  --radius-none:0px;
+  --radius-sm:18px;
+  --radius-md:24px;
+  --radius-lg:30px;
+  --radius-full:9999px;
+
+  --radius-card:var(--radius-none);
+  --radius-button:var(--radius-lg);
+  --radius-input:var(--radius-md);
+  --radius-dot:var(--radius-full);
+
+  --control-height-pill:48px;
+  --control-height-chip:40px;
+  --control-height-input:40px;
+  --control-size-icon:40px;
+  --dot-size:12px;
+}

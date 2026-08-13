@@ -1,0 +1,16 @@
+/* 47 Lines webfonts — self-hosted.
+   SUBSTITUTION NOTICE: the source system specifies proprietary cuts
+   (Nike Futura ND display, Helvetica Now Display / Text). Neither ships here.
+   Display tier  -> Archivo Black
+   UI + body tier -> Archivo (400/500/700)
+   Files live in assets/fonts/. No third-party request. */
+@font-face{font-family:"Archivo";src:url("../../../assets/fonts/Archivo-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url("../../../assets/fonts/Archivo-Medium.ttf") format("truetype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo";src:url("../../../assets/fonts/Archivo-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Archivo Black";src:url("../../../assets/fonts/Archivo-Black.ttf") format("truetype");font-weight:400 900;font-style:normal;font-display:swap}
+
+:root{
+  --font-display:"Archivo Black","Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-ui:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --font-body:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
