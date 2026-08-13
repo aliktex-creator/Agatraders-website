@@ -311,6 +311,23 @@ img,svg,video{max-width:100%;height:auto}
   [data-topbar]{overflow-x:auto!important;scrollbar-width:none}
   [data-topbar]::-webkit-scrollbar{display:none}
 }
+
+/* Supplied Since — auto-running rail */
+[data-since-rail]{scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 24px,#000 calc(100% - 24px),transparent);
+  mask-image:linear-gradient(to right,transparent,#000 24px,#000 calc(100% - 24px),transparent)}
+[data-since-rail]::-webkit-scrollbar{display:none}
+[data-since-rail] > *{flex:0 0 320px}
+[data-since-rail] [data-since]{align-self:stretch;box-sizing:border-box;background:#ffffff;
+  padding:20px 20px 24px!important;border-top:2px solid #111111!important;
+  transition:transform 220ms cubic-bezier(.2,.8,.2,1),box-shadow 220ms ease}
+[data-since-rail] [data-since]:hover{transform:translateY(-5px);box-shadow:0 20px 38px rgba(17,17,17,0.12)}
+[data-since-rail] [data-mark]{color:#007d48!important}
+[data-since-rail] [data-mark] svg{width:30px;height:30px;stroke-width:1.6}
+@media (max-width:760px){
+  [data-since-rail]{gap:20px!important;-webkit-mask-image:none;mask-image:none}
+  [data-since-rail] > *{flex:0 0 78vw}
+}
 </style>
 </helmet>
 
@@ -386,17 +403,17 @@ img,svg,video{max-width:100%;height:auto}
 
       <section style="background:#f5f5f5; margin-top:48px">
         <div class="ds-container" style="padding-top:48px; padding-bottom:48px">
-          <h2 style="font:var(--type-heading-xl); text-transform:uppercase; color:#111111; margin:0">Supplied Since</h2>
+          <h2 style="font:var(--type-heading-xl); text-transform:uppercase; color:#111111; margin:0">Export Programmes Since 2015</h2>
           <p style="font:var(--type-body-md); color:#39393b; max-width:68ch; margin:12px 0 24px">Buyer names are held in confidence, so the programmes are described rather than named. Sectors, countries and start years are exact. These are a sample: a large share of what we ship goes through importers, wholesalers and intermediaries who sell it on under their own name.</p>
           
-          <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:32px">
+          <div data-since-rail style="display:flex; gap:32px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:8px">
             <sc-if value="{{ p0 }}" hint-placeholder-val="{{ true }}">
               <div data-since style="border-top:1px solid #cacacb; padding-top:16px">
                 <div style="display:flex; align-items:center; gap:12px">
                   <span data-mark style="display:flex; color:#111111">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h12v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M16 9h2.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 2v3M12 2v3"/></svg>
                   </span>
-                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111">2015</div>
+                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111"><span style="font:var(--type-caption-sm); letter-spacing:0.2em; color:#707072; margin-right:10px; vertical-align:2px">Since </span>2015</div>
                 </div>
                 <div data-tag style="font:var(--type-caption-sm); text-transform:uppercase; letter-spacing:0.1em; color:#707072; margin-top:12px">Hospitality Uniforms</div>
                 <h3 style="font:var(--type-body-strong); color:#111111; margin:6px 0 0">Café Group &middot; UAE</h3>
@@ -409,7 +426,7 @@ img,svg,video{max-width:100%;height:auto}
                   <span data-mark style="display:flex; color:#111111">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c3.2 3.8 5 6.2 5 9a5 5 0 0 1-10 0c0-2.2 1.2-3.6 2.6-5.2.4 1.8.9 2.4 1.9 2.9C11.5 7.6 11 5.2 12 3z"/></svg>
                   </span>
-                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111">2020</div>
+                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111"><span style="font:var(--type-caption-sm); letter-spacing:0.2em; color:#707072; margin-right:10px; vertical-align:2px">Since </span>2020</div>
                 </div>
                 <div data-tag style="font:var(--type-caption-sm); text-transform:uppercase; letter-spacing:0.1em; color:#707072; margin-top:12px">Industrial Workwear &amp; Fabric</div>
                 <h3 style="font:var(--type-body-strong); color:#111111; margin:6px 0 0">Natural Gas &middot; Oman</h3>
@@ -422,7 +439,7 @@ img,svg,video{max-width:100%;height:auto}
                   <span data-mark style="display:flex; color:#111111">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 8h6v13H9z"/><path d="M10.5 8V5h3v3"/><path d="M17 4h1M17 7h1M19 5.5h1"/></svg>
                   </span>
-                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111">2021</div>
+                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111"><span style="font:var(--type-caption-sm); letter-spacing:0.2em; color:#707072; margin-right:10px; vertical-align:2px">Since </span>2021</div>
                 </div>
                 <div data-tag style="font:var(--type-caption-sm); text-transform:uppercase; letter-spacing:0.1em; color:#707072; margin-top:12px">Corporate Wear</div>
                 <h3 style="font:var(--type-body-strong); color:#111111; margin:6px 0 0">Consumer Goods &middot; United Kingdom</h3>
@@ -435,7 +452,7 @@ img,svg,video{max-width:100%;height:auto}
                   <span data-mark style="display:flex; color:#111111">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h12l-1.4 11.5a1 1 0 0 1-1 .5H8.4a1 1 0 0 1-1-.5z"/><path d="M4.5 6h15"/><path d="M9 3h6"/></svg>
                   </span>
-                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111">2022</div>
+                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111"><span style="font:var(--type-caption-sm); letter-spacing:0.2em; color:#707072; margin-right:10px; vertical-align:2px">Since </span>2022</div>
                 </div>
                 <div data-tag style="font:var(--type-caption-sm); text-transform:uppercase; letter-spacing:0.1em; color:#707072; margin-top:12px">Service Uniforms</div>
                 <h3 style="font:var(--type-body-strong); color:#111111; margin:6px 0 0">Fast Food &middot; Global Franchise</h3>
@@ -448,7 +465,7 @@ img,svg,video{max-width:100%;height:auto}
                   <span data-mark style="display:flex; color:#111111">
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-4 9 4v8l-9 4-9-4z"/><path d="M3 8l9 4 9-4"/><path d="M12 12v8"/></svg>
                   </span>
-                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111">2024</div>
+                  <div data-year style="font:var(--fw-medium) 44px/1 var(--font-display); letter-spacing:-0.005em; text-transform:uppercase; color:#111111"><span style="font:var(--type-caption-sm); letter-spacing:0.2em; color:#707072; margin-right:10px; vertical-align:2px">Since </span>2024</div>
                 </div>
                 <div data-tag style="font:var(--type-caption-sm); text-transform:uppercase; letter-spacing:0.1em; color:#707072; margin-top:12px">Promotional Wear</div>
                 <h3 style="font:var(--type-body-strong); color:#111111; margin:6px 0 0">Logistics &middot; Global Provider</h3>
@@ -1173,7 +1190,30 @@ class Component extends DCLogic {
   faqVals() { const o = this.state.faqOpen || {}; const v = {}; for (let i = 0; i < 5; i++) { v["fo" + i] = !!o[i]; v["fc" + i] = !o[i]; v["ft" + i] = this.faqT(i); } return v; }
   state = { faqOpen: {}, page: "Home", sent: false, sending: false, failed: false, types: {}, statT: 0 };
 
-  componentDidMount() { this.setupReveal(); this.setupCursor(); }
+  componentDidMount() { this.setupReveal(); this.setupCursor(); this.setupRail(); }
+
+  setupRail() {
+    if (this.railOn) return;
+    const rail = document.querySelector("[data-since-rail]");
+    if (!rail || !rail.children.length) { setTimeout(() => this.setupRail(), 300); return; }
+    this.railOn = true;
+    if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+    rail.style.scrollSnapType = "none";
+    Array.prototype.slice.call(rail.children).forEach((n) => {
+      const c = n.cloneNode(true);
+      c.setAttribute("aria-hidden", "true");
+      rail.appendChild(c);
+    });
+    let x = 0;
+    const step = () => {
+      const half = rail.scrollWidth / 2;
+      x += 0.45;
+      if (x >= half) x -= half;
+      rail.scrollLeft = x;
+      this.railRaf = requestAnimationFrame(step);
+    };
+    this.railRaf = requestAnimationFrame(step);
+  }
 
   setupCursor() {
     if (this.cursorOn) return;
@@ -1189,7 +1229,7 @@ class Component extends DCLogic {
         (el) => {
           const r = parseFloat(getComputedStyle(el).borderRadius) || 0;
           const b = el.getBoundingClientRect();
-          return r >= 16 && b.width > 44 && b.height > 22;
+          return false;
         }
       );
       this.frames = Array.prototype.filter.call(
@@ -1230,7 +1270,7 @@ class Component extends DCLogic {
     this.raf = requestAnimationFrame(tick);
   }
 
-  componentWillUnmount() { cancelAnimationFrame(this.raf); clearInterval(this.collectT); }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); cancelAnimationFrame(this.railRaf); clearInterval(this.collectT); }
   componentDidUpdate() { this.setupReveal(); }
 
   // Motion is opt-in: only hide anything once a real animation frame has fired,
@@ -1258,9 +1298,10 @@ class Component extends DCLogic {
   }
 
   setupReveal() {
+    this.setupStats();
+    return;
     if (typeof IntersectionObserver === "undefined") return;
     this.proveMotion();
-    this.setupStats();
     if (["Fabrics", "About", "Contact"].indexOf(this.state.page) > -1) return;
     if (!this.io) {
       this.io = new IntersectionObserver((entries) => {
