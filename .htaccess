@@ -23,6 +23,8 @@ ErrorDocument 404 /index.html
   AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
 </IfModule>
 
+# Pages and scripts must always be re-checked against the server.
+# Images and fonts may be held, because their contents never change under the same name.
 <IfModule mod_headers.c>
   <FilesMatch "\.(html|xml|txt)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
@@ -37,10 +39,10 @@ ErrorDocument 404 /index.html
   </FilesMatch>
 </IfModule>
 
+# Stop the server-side cache holding pages
 <IfModule LiteSpeed>
   CacheDisable public /
 </IfModule>
-
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/webp "access plus 1 year"
