@@ -191,6 +191,35 @@ img,svg,video{max-width:100%;height:auto}
   [data-topbar]{overflow-x:auto!important;scrollbar-width:none}
   [data-topbar]::-webkit-scrollbar{display:none}
 }
+
+/* Order-terms strip + compact footer */
+[data-terms]{padding-top:24px!important;padding-bottom:24px!important;gap:20px 28px!important}
+[data-terms] > div > div:first-child{font-size:10px!important;letter-spacing:0.12em!important;line-height:1.2!important}
+[data-terms] > div > div:last-child{font-size:14px!important;line-height:1.3!important;margin-top:3px!important}
+@media (max-width:760px){
+  [data-terms]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px 16px!important;padding-top:18px!important;padding-bottom:18px!important}
+  [data-terms] > div > div:last-child{font-size:13px!important}
+}
+footer .ds-container{padding-top:18px!important;padding-bottom:10px!important}
+footer h4{font-size:10px!important;line-height:1.2!important;text-transform:uppercase;letter-spacing:0.12em}
+footer a{font-size:11px!important;line-height:1.2!important}
+footer [data-footercol]{gap:6px!important}
+footer [data-footerlinks]{gap:3px!important}
+footer [data-footergrid]{gap:10px 20px!important}
+@media (max-width:760px){
+  footer .ds-container{padding-top:14px!important;padding-bottom:8px!important}
+  footer [data-footergrid]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px 14px!important}
+  footer a{min-height:18px!important;font-size:11px!important}
+  footer [data-footercol]{gap:5px!important}
+  footer [data-footerlinks]{gap:2px!important}
+}
+
+footer hr{margin:10px 0 8px!important}
+footer + div .ds-container{padding-top:8px!important;padding-bottom:12px!important;gap:6px 20px!important}
+@media (max-width:760px){
+  footer hr{margin:8px 0 6px!important}
+  footer + div .ds-container{padding-top:6px!important;padding-bottom:10px!important;gap:4px 16px!important}
+}
 </style>
 </helmet>
 
@@ -439,10 +468,10 @@ img,svg,video{max-width:100%;height:auto}
 
   </main>),(  <footer style="background:var(--canvas); border-top:var(--elevation-divider)">
   <div class="ds-container" style="padding-top:var(--space-section); padding-bottom:var(--space-xl)">
-    <div style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:var(--space-xl)">
-      <div style="display:flex; flex-direction:column; gap:var(--space-md)">
+    <div data-footergrid style="display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:var(--space-xl)">
+      <div data-footercol style="display:flex; flex-direction:column; gap:var(--space-md)">
         <h4 style="font:var(--type-body-strong); color:var(--ink); margin:0">Fabrics</h4>
-        <div style="display:flex; flex-direction:column; gap:var(--space-sm)">
+        <div data-footerlinks style="display:flex; flex-direction:column; gap:var(--space-sm)">
           <a href="/fabrics" style="font:var(--type-caption-md); color:var(--mute)">Running Qualities</a>
           <a href="/fabrics" style="font:var(--type-caption-md); color:var(--mute)">GSM &amp; Constructions</a>
           <a href="/fabrics" style="font:var(--type-caption-md); color:var(--mute)">Shade Library</a>
@@ -450,9 +479,9 @@ img,svg,video{max-width:100%;height:auto}
           <a href="/fabrics" style="font:var(--type-caption-md); color:var(--mute)">Fabric by the Roll</a>
         </div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:var(--space-md)">
+      <div data-footercol style="display:flex; flex-direction:column; gap:var(--space-md)">
         <h4 style="font:var(--type-body-strong); color:var(--ink); margin:0">Apparel</h4>
-        <div style="display:flex; flex-direction:column; gap:var(--space-sm)">
+        <div data-footerlinks style="display:flex; flex-direction:column; gap:var(--space-sm)">
           <a href="/apparel" style="font:var(--type-caption-md); color:var(--mute)">Uniforms &amp; Workwear</a>
           <a href="/apparel" style="font:var(--type-caption-md); color:var(--mute)">Polos &amp; T-Shirts</a>
           <a href="/apparel" style="font:var(--type-caption-md); color:var(--mute)">Hoodies &amp; Sweatshirts</a>
@@ -463,9 +492,9 @@ img,svg,video{max-width:100%;height:auto}
           <a href="/polo-shirt-manufacturer" style="font:var(--type-caption-md); color:var(--mute)">Polo Shirt Manufacturer</a>
         </div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:var(--space-md)">
+      <div data-footercol style="display:flex; flex-direction:column; gap:var(--space-md)">
         <h4 style="font:var(--type-body-strong); color:var(--ink); margin:0">Readymade</h4>
-        <div style="display:flex; flex-direction:column; gap:var(--space-sm)">
+        <div data-footerlinks style="display:flex; flex-direction:column; gap:var(--space-sm)">
           <a href="/readymade" style="font:var(--type-caption-md); color:var(--mute)">Dri-Fit Polo</a>
           <a href="/readymade" style="font:var(--type-caption-md); color:var(--mute)">Honeycomb Polo</a>
           <a href="/readymade" style="font:var(--type-caption-md); color:var(--mute)">Acid Wash Tee</a>
@@ -474,9 +503,9 @@ img,svg,video{max-width:100%;height:auto}
           <a href="/t-shirt-manufacturer" style="font:var(--type-caption-md); color:var(--mute)">T-Shirt Manufacturer</a>
         </div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:var(--space-md)">
+      <div data-footercol style="display:flex; flex-direction:column; gap:var(--space-md)">
         <h4 style="font:var(--type-body-strong); color:var(--ink); margin:0">Group</h4>
-        <div style="display:flex; flex-direction:column; gap:var(--space-sm)">
+        <div data-footerlinks style="display:flex; flex-direction:column; gap:var(--space-sm)">
           <a href="/about" style="font:var(--type-caption-md); color:var(--mute)">AGAtraders — Karachi</a>
           <a href="/about" style="font:var(--type-caption-md); color:var(--mute)">47 Lines — Karachi & Dubai</a>
           <a href="/about" style="font:var(--type-caption-md); color:var(--mute)">Kamani Textiles — Ajman</a>
