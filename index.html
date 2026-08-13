@@ -17,9 +17,9 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://agatraders.com/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="alternate icon" href="assets/aga-mark.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/aga-mark.png">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/assets/apple-touch-icon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="twitter:title" content="Clothing &amp; Fabric Manufacturer — Pakistan &amp; UAE | AGA Traders">
 <meta name="twitter:description" content="Knit fabric and finished garments made inside one group. 25 qualities, 800+ shades, uniforms, polos, tees and hoodies. Low minimum order: 100 pieces.">
 <meta name="robots" content="index, follow">
@@ -265,8 +265,7 @@ img,svg,video{max-width:100%;height:auto}
 }
 /* mobile pass v2 */
 @media (max-width:760px){
-  [data-headcta]{display:inline-flex!important}
-  [data-headcta] > *{min-height:40px!important;padding:0 16px!important;font:var(--type-button-sm)!important;white-space:nowrap}
+  [data-headcta]{display:none!important}
   [data-nav]{gap:16px!important;-webkit-mask-image:linear-gradient(to right,#000 88%,transparent)}
   [data-topbar]{flex-wrap:nowrap!important;overflow-x:auto;scrollbar-width:none;justify-content:flex-start!important}
   [data-topbar]::-webkit-scrollbar{display:none}
@@ -299,6 +298,19 @@ img,svg,video{max-width:100%;height:auto}
   [data-enter-fade]{flex-wrap:wrap!important}
   h3,[data-year]{overflow-wrap:break-word}
 }
+
+/* mobile pass v4 — top bar marquee */
+@media (max-width:760px){
+  [data-topbar]{height:36px!important;flex-wrap:nowrap!important;justify-content:flex-start!important;overflow:hidden!important;gap:0!important;padding-top:0!important;padding-bottom:0!important}
+  [data-topbar] > div:first-child{display:flex!important;flex:0 0 auto;flex-wrap:nowrap!important;white-space:nowrap;animation:om-topbar 18s ease-in-out infinite alternate}
+  [data-topbarrow] > *{flex:0 0 auto}
+}
+@keyframes om-topbar{0%,10%{transform:translateX(0)}90%,100%{transform:translateX(min(0px, calc(100vw - 100% - 40px)))}}
+@media (prefers-reduced-motion:reduce){
+  [data-topbar] > div:first-child{animation:none!important}
+  [data-topbar]{overflow-x:auto!important;scrollbar-width:none}
+  [data-topbar]::-webkit-scrollbar{display:none}
+}
 </style>
 </helmet>
 
@@ -306,11 +318,13 @@ img,svg,video{max-width:100%;height:auto}
 
   <div style="background:#f5f5f5">
     <div data-topbar class="ds-container" style="display:flex; justify-content:flex-end; align-items:center; gap:16px; height:36px">
+      <div data-topbarrow style="display:flex; align-items:center; gap:16px">
       <span style="font:var(--type-caption-sm); color:#111111"><span style="font-family:'AGAWordmarkItalic'">AGA</span><span style="font-family:'AGAWordmark'">traders</span> Group &middot; Karachi &middot; Dubai &middot; Ajman</span>
       <span style="color:#cacacb; font:var(--type-caption-sm)">|</span>
       <a href="https://wa.me/971555547635" style="font:var(--type-caption-sm)">Chat on WhatsApp</a>
       <span style="color:#cacacb; font:var(--type-caption-sm)">|</span>
       <a href="mailto:sales@agatraders.com" style="font:var(--type-caption-sm)">sales@agatraders.com</a>
+      </div>
     </div>
   </div>
 
@@ -374,14 +388,7 @@ img,svg,video{max-width:100%;height:auto}
         <div class="ds-container" style="padding-top:48px; padding-bottom:48px">
           <h2 style="font:var(--type-heading-xl); text-transform:uppercase; color:#111111; margin:0">Supplied Since</h2>
           <p style="font:var(--type-body-md); color:#39393b; max-width:68ch; margin:12px 0 24px">Buyer names are held in confidence, so the programmes are described rather than named. Sectors, countries and start years are exact. These are a sample: a large share of what we ship goes through importers, wholesalers and intermediaries who sell it on under their own name.</p>
-          <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-bottom:32px">
-            <x-import component-from-global-scope="Ds47LinesDesignSystem_38c46b.FilterChip" active="{{ k0 }}" onClick="{{ fk0 }}" hint-size="auto,32px">All</x-import>
-            <x-import component-from-global-scope="Ds47LinesDesignSystem_38c46b.FilterChip" active="{{ k1 }}" onClick="{{ fk1 }}" hint-size="auto,32px">Uniforms &amp; Workwear</x-import>
-            <x-import component-from-global-scope="Ds47LinesDesignSystem_38c46b.FilterChip" active="{{ k2 }}" onClick="{{ fk2 }}" hint-size="auto,32px">Corporate Wear</x-import>
-            <x-import component-from-global-scope="Ds47LinesDesignSystem_38c46b.FilterChip" active="{{ k3 }}" onClick="{{ fk3 }}" hint-size="auto,32px">Fabric Supply</x-import>
-            <x-import component-from-global-scope="Ds47LinesDesignSystem_38c46b.FilterChip" active="{{ k4 }}" onClick="{{ fk4 }}" hint-size="auto,32px">Promotional</x-import>
-            <span style="font:var(--type-caption-md); color:#707072; margin-left:8px">{{ sinceCount }}</span>
-          </div>
+          
           <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:32px">
             <sc-if value="{{ p0 }}" hint-placeholder-val="{{ true }}">
               <div data-since style="border-top:1px solid #cacacb; padding-top:16px">
