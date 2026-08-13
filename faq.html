@@ -17,6 +17,9 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:image" content="https://agatraders.com/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/aga-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/aga-mark.png">
 <meta name="twitter:title" content="Clothing Manufacturer FAQ — MOQ, GSM &amp; Lead Times | AGA Traders">
 <meta name="twitter:description" content="Minimum order quantities, GSM guidance, sampling and production lead times, lab test reports, shipping terms and payment — answered in full, in one place.">
 <meta name="robots" content="index, follow">
@@ -182,6 +185,22 @@ img,svg,video{max-width:100%;height:auto}
   [data-brandmark]{width:28px!important;height:28px!important}
   [data-headcta] > *{padding:0 12px!important}
 }
+/* mobile pass v3 */
+@media (max-width:760px){
+  header .ds-container{overflow:visible!important}
+  [data-burger]{display:inline-flex!important}
+  [data-nav]{display:none!important;position:absolute;left:0;right:0;top:100%;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:4px 20px 14px!important;background:#ffffff;border-top:1px solid #e5e5e5;box-shadow:0 14px 26px rgba(0,0,0,0.09);overflow:visible!important;-webkit-mask-image:none!important;mask-image:none!important}
+  [data-navtoggle]:checked ~ [data-nav]{display:flex!important}
+  [data-nav] a{min-height:52px!important;display:flex!important;align-items:center;border-bottom:1px solid #ececec;border-left:none!important;border-right:none!important;padding-bottom:0!important}
+  [data-nav] a:last-child{border-bottom:none}
+  [style*="grid-template-columns:repeat(3"],[style*="grid-template-columns: repeat(3"],
+  [style*="grid-template-columns:repeat(4"],[style*="grid-template-columns: repeat(4"],
+  [style*="grid-template-columns:repeat(5"],[style*="grid-template-columns: repeat(5"],
+  [style*="grid-template-columns:repeat(6"],[style*="grid-template-columns: repeat(6"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-stats]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  [data-enter-fade]{flex-wrap:wrap!important}
+  h3,[data-year]{overflow-wrap:break-word}
+}
 </style>
 </helmet>
 
@@ -199,6 +218,10 @@ img,svg,video{max-width:100%;height:auto}
 
   <header style="background:#ffffff; box-shadow:inset 0 -1px 0 #e5e5e5; position:sticky; top:0; z-index:20">
     <div class="ds-container" style="display:flex; align-items:center; justify-content:space-between; gap:16px; height:60px; overflow:hidden">
+      <input type="checkbox" id="navtoggle" data-navtoggle style="display:none">
+      <label for="navtoggle" data-burger aria-label="Menu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; margin-left:-12px; cursor:pointer; flex:0 0 auto">
+        <svg width="22" height="14" viewBox="0 0 22 14" fill="none" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h22" stroke="#111111" stroke-width="2"></path></svg>
+      </label>
       <a href="/" style="display:flex; align-items:center; gap:12px">
         <img src="assets/aga-mark.png" alt="AGAtraders" style="width:32px; height:32px">
         <span style="font-size:22px; line-height:1; letter-spacing:0"><span style="font-family:'AGAWordmarkItalic'">AGA</span><span style="font-family:'AGAWordmark'">traders</span></span>
